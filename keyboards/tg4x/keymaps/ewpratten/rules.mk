@@ -8,3 +8,7 @@
 #   ATmega32A    bootloadHID
 #   ATmega328P   USBasp
 BOOTLOADER = qmk-dfu
+
+
+# Enable bootloader keys
+BOOTMAGIC_ENABLE = lite

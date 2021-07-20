@@ -51,4 +51,46 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 };
 
+void matrix_init_user() {
 
+}
+
+void matrix_scan_user(){
+
+}
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    return true;
+}
+
+void update_led(void) {
+    // Get the currently active layer ID
+    uint8_t layer = biton32(layer_state);
+
+    // Clear the board LEDs
+    rgblight_sethsv_at(0, 0, 0, 0);
+
+    // Handle the LED state based on layer
+    switch (layer) {
+        case 0:
+            // PINK
+            rgblight_setrgb(255, 71, 188);
+            break;
+
+        case 1:
+            // BLUE
+            rgblight_setrgb(71, 71, 255);
+            break;
+
+        case 2:
+            // RED
+            rgblight_setrgb(255, 0, 43);
+            break;
+
+        default:
+            rgblight_setrgb(0, 255, 0);
+            break;
+    }
+}
+
+void led_set_user(uint8_t usb_led) { update_led(); }
