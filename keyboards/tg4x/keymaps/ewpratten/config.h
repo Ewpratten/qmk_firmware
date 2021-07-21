@@ -33,3 +33,7 @@
 // Layer-based lighting
 #define RGBLIGHT_LAYERS
 // NOTE: May need to increase the max light layer count in the future
+
+// To be tweaked based on typing speed
+#define TAPPING_TERM 300
+
