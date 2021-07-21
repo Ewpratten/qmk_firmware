@@ -23,3 +23,13 @@
 
 // Override the mode-2 speed
 #define MK_C_OFFSET_1 8 // Defaut: 4
+
+
+// Backlight defaults
+#define RGBLIGHT_DEFAULT_HUE 234
+#define RGBLIGHT_DEFAULT_SAT 128
+#define RGBLIGHT_DEFAULT_VAL 255
+
+// Layer-based lighting
+#define RGBLIGHT_LAYERS
+// NOTE: May need to increase the max light layer count in the future
