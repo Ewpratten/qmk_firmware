@@ -17,3 +17,7 @@
 #pragma once
 
 // place overrides here
+
+// Force constant-speed controls for mouse movement
+#define MK_3_SPEED
+

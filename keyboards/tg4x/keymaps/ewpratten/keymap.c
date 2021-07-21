@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * This layer is used for controlling both the mouse and arrow keys.
     */
     [2] = LAYOUT(
-        TO(0),   KC_WH_D, KC_MS_U, KC_WH_U, KC_ACL1, _______, _______, _______, _______, _______, _______, _______, _______,
+        TO(0),   KC_WH_D, KC_MS_U, KC_WH_U, KC_ACL1, KC_ACL2, _______, _______, _______, _______, _______, _______, _______,
         _______, KC_MS_L, KC_MS_D, KC_MS_R, KC_ACL0, _______, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_INS, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
         _______, _______, _______, KC_BTN1, KC_BTN2, _______, _______, _______, _______
@@ -95,7 +95,7 @@ void update_led(void) {
 
 void matrix_init_user() {
     // Defalt the layer color to pink before we actally get real layer data
-    rgblight_setrgb(255, 71, 188);
+    rgblight_sethsv(HSV_PINK);
 
 
 
