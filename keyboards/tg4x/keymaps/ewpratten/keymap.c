@@ -18,7 +18,7 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT( /* Base */
         KC_ESC,  KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_DEL, KC_BSPC,
-        KC_TAB,  KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_ENT,
+        KC_TAB,  KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, LT(4, KC_L), KC_SCLN, KC_ENT,
         KC_LSPO, KC_Z, KC_X, KC_C, KC_V, KC_B, LT(2, KC_N), KC_M, KC_COMM, KC_DOT, KC_RSPC, MO(1),
         KC_LCTL, KC_LALT, KC_LGUI, KC_SPACE, KC_SPACE, MO(3), _______, _______, _______
     ),
@@ -49,9 +49,55 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, KC_HOME, KC_END,  _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
+
+    // LED control layer
+    [4] = LAYOUT(
+        RESET , _______, RGB_VAI, RGB_TOG, _______, _______, _______, _______, _______,   _______, _______, _______, _______,
+        _______, _______, RGB_VAD, _______, _______, _______, _______, _______, _______, _______,_______,  _______,
+        _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______
+    ),
 };
 
+
+
+void update_led(void) {
+    // Get the currently active layer ID
+    uint8_t layer = biton32(layer_state);
+
+    // Handle the LED state based on layer
+    switch (layer) {
+        case 0:
+            // PINK
+            rgblight_sethsv(HSV_PINK);
+            break;
+
+        case 1:
+            // BLUE
+            rgblight_sethsv(HSV_BLUE);
+            break;
+
+        case 2:
+            // RED
+            rgblight_sethsv(HSV_RED);
+            break;
+
+        case 4:
+            // WHITE
+            rgblight_sethsv(HSV_WHITE);
+            break;
+
+        default:
+            rgblight_setrgb(HSV_GREEN);
+            break;
+    }
+}
+
 void matrix_init_user() {
+    // Defalt the layer color to pink before we actally get real layer data
+    rgblight_setrgb(255, 71, 188);
+
+
 
 }
 
@@ -61,36 +107,6 @@ void matrix_scan_user(){
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
-}
-
-void update_led(void) {
-    // Get the currently active layer ID
-    uint8_t layer = biton32(layer_state);
-
-    // Clear the board LEDs
-    rgblight_sethsv_at(0, 0, 0, 0);
-
-    // Handle the LED state based on layer
-    switch (layer) {
-        case 0:
-            // PINK
-            rgblight_setrgb(255, 71, 188);
-            break;
-
-        case 1:
-            // BLUE
-            rgblight_setrgb(71, 71, 255);
-            break;
-
-        case 2:
-            // RED
-            rgblight_setrgb(255, 0, 43);
-            break;
-
-        default:
-            rgblight_setrgb(0, 255, 0);
-            break;
-    }
 }
 
 void led_set_user(uint8_t usb_led) { update_led(); }
