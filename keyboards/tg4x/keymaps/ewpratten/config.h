@@ -26,9 +26,9 @@
 
 
 // Backlight defaults
-#define RGBLIGHT_DEFAULT_HUE 234
-#define RGBLIGHT_DEFAULT_SAT 128
-#define RGBLIGHT_DEFAULT_VAL 255
+#define RGBLIGHT_DEFAULT_HUE 0
+#define RGBLIGHT_DEFAULT_SAT 0
+#define RGBLIGHT_DEFAULT_VAL 0
 
 // Layer-based lighting
 #define RGBLIGHT_LAYERS
@@ -36,4 +36,4 @@
 
 // To be tweaked based on typing speed
 #define TAPPING_TERM 300
-
+#define TAPPING_TERM_PER_KEY

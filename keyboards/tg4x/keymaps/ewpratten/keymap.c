@@ -75,12 +75,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *
  * The following configurers the board colors depending on my active layer
  */
-const rgblight_segment_t PROGMEM rgb_setting_layer_capslock[]   = RGBLIGHT_LAYER_SEGMENTS({1, 1, HSV_RED});
-const rgblight_segment_t PROGMEM rgb_setting_layer_base[]       = RGBLIGHT_LAYER_SEGMENTS({1, 7, HSV_PINK});
-const rgblight_segment_t PROGMEM rgb_setting_layer_numbers[]    = RGBLIGHT_LAYER_SEGMENTS({1, 7, HSV_RED});
-const rgblight_segment_t PROGMEM rgb_setting_layer_navigation[] = RGBLIGHT_LAYER_SEGMENTS({1, 7, HSV_GREEN});
-const rgblight_segment_t PROGMEM rgb_setting_layer_extras[]     = RGBLIGHT_LAYER_SEGMENTS({1, 7, HSV_BLUE});
-const rgblight_segment_t PROGMEM rgb_setting_layer_led_ctrl[]   = RGBLIGHT_LAYER_SEGMENTS({1, 7, HSV_WHITE});
+const rgblight_segment_t PROGMEM rgb_setting_layer_capslock[]   = RGBLIGHT_LAYER_SEGMENTS({0, 1, HSV_RED});
+const rgblight_segment_t PROGMEM rgb_setting_clear_left_side[]  = RGBLIGHT_LAYER_SEGMENTS({0, 2, 0, 0, 0});
+const rgblight_segment_t PROGMEM rgb_setting_layer_base[]       = RGBLIGHT_LAYER_SEGMENTS({2, 3, HSV_PINK});
+const rgblight_segment_t PROGMEM rgb_setting_layer_numbers[]    = RGBLIGHT_LAYER_SEGMENTS({2, 3, HSV_RED});
+const rgblight_segment_t PROGMEM rgb_setting_layer_navigation[] = RGBLIGHT_LAYER_SEGMENTS({2, 3, HSV_GREEN});
+const rgblight_segment_t PROGMEM rgb_setting_layer_extras[]     = RGBLIGHT_LAYER_SEGMENTS({2, 3, HSV_BLUE});
+const rgblight_segment_t PROGMEM rgb_setting_layer_led_ctrl[]   = RGBLIGHT_LAYER_SEGMENTS({0, 7, HSV_WHITE});
 
 // Layer list
 const rgblight_segment_t* const PROGMEM rgb_layers[] = RGBLIGHT_LAYERS_LIST(rgb_setting_layer_capslock,    // Caps
@@ -88,7 +89,8 @@ const rgblight_segment_t* const PROGMEM rgb_layers[] = RGBLIGHT_LAYERS_LIST(rgb_
                                                                             rgb_setting_layer_numbers,     // Layer 1
                                                                             rgb_setting_layer_navigation,  // Layer 2
                                                                             rgb_setting_layer_extras,      // Layer 3
-                                                                            rgb_setting_layer_led_ctrl     // Layer 4
+                                                                            rgb_setting_layer_led_ctrl,    // Layer 4
+                                                                            rgb_setting_clear_left_side    // Clear
 );
 
 bool led_update_user(led_t led_state) {
@@ -110,13 +112,29 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 void keyboard_post_init_user(void) {
     // Enable the LED layers
     rgblight_layers = rgb_layers;
+
+    // Clear the LEDs
+    rgblight_set_layer_state(6, true);
 }
 
-void matrix_init_user() {
-}
+void matrix_init_user() {}
 
 void matrix_scan_user() {}
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) { return true; }
 
 // void led_set_user(uint8_t usb_led) {}
+
+// Overrides for the tapping terms.
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t* record) {
+    switch (keycode) {
+        // Space cadet needs to be much faster than layer switch
+        case KC_RSPC:
+        case KC_LSPO:
+            return 130;
+
+            // Default (controls layer switch)
+        default:
+            return TAPPING_TERM;
+    }
+}

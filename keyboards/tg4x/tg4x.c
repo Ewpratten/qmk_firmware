@@ -45,3 +45,8 @@ void led_set_kb(uint8_t usb_led) {
 
     led_set_user(usb_led);
 }
+
+bool led_update_kb(led_t led_state) {
+    led_update_user(led_state);
+    return true;
+}
