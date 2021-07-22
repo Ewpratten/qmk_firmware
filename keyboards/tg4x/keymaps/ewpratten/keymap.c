@@ -131,6 +131,11 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t* record) {
         // Space cadet needs to be much faster than layer switch
         case KC_RSPC:
         case KC_LSPO:
+            return 150;
+
+        // Layer switches need to be very fast to keep up with typing speed
+        case TT(LAYER_SYMB):
+        case TT(LAYER_EXTRA):
             return 130;
 
             // Default (controls layer switch)
