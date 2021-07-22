@@ -14,8 +14,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [LAYER_BASE] = LAYOUT( /* Base */
         KC_ESC,  KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, LT(LAYER_SHF_MODS, KC_P), KC_DEL, KC_BSPC,
         KC_TAB,  KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, LT(LAYER_LEDS, KC_L), KC_SCLN, KC_ENT,
-        KC_LSPO, KC_Z, KC_X, KC_C, KC_V, KC_B, LT(LAYER_NAVI, KC_N), KC_M, KC_COMM, KC_DOT, KC_RSPC, MO(LAYER_SYMB),
-        KC_LCTL, KC_LALT, KC_LGUI, KC_SPACE, KC_SPACE, MO(LAYER_EXTRA), _______, _______, _______
+        KC_LSPO, KC_Z, KC_X, KC_C, KC_V, KC_B, LT(LAYER_NAVI, KC_N), KC_M, KC_COMM, KC_DOT, KC_RSPC, TT(LAYER_SYMB),
+        KC_LCTL, KC_LALT, KC_LGUI, KC_SPACE, KC_SPACE, TT(LAYER_EXTRA), _______, _______, _______
     ),
 
     // Number and Symbol layer
@@ -31,15 +31,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * This layer is used for controlling both the mouse and arrow keys.
     */
     [LAYER_NAVI] = LAYOUT(
-        TO(LAYER_BASE),   KC_WH_D, KC_MS_U, KC_WH_U, KC_ACL1, KC_ACL2, _______, _______, _______, _______, _______, _______, _______,
-        _______, KC_MS_L, KC_MS_D, KC_MS_R, KC_ACL0, _______, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_INS, _______,
-        _______, _______, _______, _______, _______, KC_BTN3, _______, _______, _______, _______, _______, _______,
+        TO(LAYER_BASE), KC_WH_D, KC_MS_U, KC_WH_U, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        KC_ACL0, KC_MS_L, KC_MS_D, KC_MS_R, _______, _______, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_INS, _______,
+        KC_ACL1, _______, _______, _______, _______, KC_BTN3, _______, _______, _______, _______, _______, _______,
         _______, _______, _______, KC_BTN1, KC_BTN2, _______, _______, _______, _______
     ),
 
     // Extras layer
     [LAYER_EXTRA] = LAYOUT(
-        _______, KC__VOLDOWN, KC__VOLUP, KC__MUTE, _______, _______, _______, KC_PGUP, _______,   KC_PGDN, KC_PSCR, KC_SLCK, KC_PAUS,
+        TO(LAYER_BASE), KC__VOLDOWN, KC__VOLUP, KC__MUTE, _______, _______, _______, KC_PGUP, _______,   KC_PGDN, KC_PSCR, KC_SLCK, KC_PAUS,
         KC_CAPS, KC_MPRV, KC_MPLY, KC_MNXT, _______, _______, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,KC_INS,  _______,
         _______, _______, _______, _______, _______, KC_HOME, KC_END,  _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______

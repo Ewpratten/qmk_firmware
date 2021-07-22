@@ -20,10 +20,13 @@
 
 // Force constant-speed controls for mouse movement
 #define MK_3_SPEED
+#define MK_MOMENTARY_ACCEL
 
 // Override the mode-2 speed
-#define MK_C_OFFSET_1 8 // Defaut: 4
+#define MK_C_OFFSET_1 4 // Defaut: 4
 
+// Double tap to toggle layer
+#define TAPPING_TOGGLE 2
 
 // Backlight defaults
 #define RGBLIGHT_DEFAULT_HUE 0
