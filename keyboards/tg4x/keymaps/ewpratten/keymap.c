@@ -15,10 +15,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // Base Layer
     [LAYER_BASE] = LAYOUT(
+        KC_ESC,  KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, LT(LAYER_SHF_MODS, KC_P), KC_DEL, KC_BSPC,
+        KC_TAB,  KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, LT(LAYER_LEDS, KC_L), KC_SCLN, KC_ENT,
+        KC_LSPO, KC_Z, KC_X, KC_C, KC_V, KC_B, LT(LAYER_NAVI, KC_N), KC_M, KC_COMM, KC_DOT, KC_RSPC, TT(LAYER_SYMB),
+        KC_LCTL, KC_LALT, KC_LGUI, KC_SPACE, KC_SPACE, TT(LAYER_EXTRA), _______, _______, TO(LAYER_BASE)
+        /*
         KC_ESC,  KC_Q, KC_W, KC_F, KC_P, KC_B, KC_J, LT(LAYER_LEDS, KC_L), KC_U, KC_Y, LT(LAYER_SHF_MODS, KC_SCLN), _______, KC_BSPC,
         KC_TAB,  KC_A, KC_R, KC_S, KC_T, KC_G, KC_M, LT(LAYER_NAVI, KC_N), KC_E, KC_I, KC_O, KC_ENT,
         KC_LSPO, KC_X, KC_C, KC_D, KC_V, KC_Z, KC_K, KC_H, KC_COMM, KC_DOT, KC_RSPC, TT(LAYER_SYMB),
         KC_LCTL, KC_LALT, KC_LGUI, KC_SPACE, KC_SPACE, TT(LAYER_EXTRA), _______, _______, TO(LAYER_QWERTY)
+        */
     ),
 
     // QWERTY layer
