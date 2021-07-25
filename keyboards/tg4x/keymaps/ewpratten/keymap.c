@@ -23,9 +23,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // QWERTY layer
     [LAYER_COLEMAK] = LAYOUT(
-        KC_ESC,  KC_Q, KC_W, KC_F, KC_P, KC_B, KC_J, LT(LAYER_LEDS, KC_L), KC_U, KC_Y, LT(LAYER_SHF_MODS, KC_SCLN), _______, KC_BSPC,
-        KC_TAB,  KC_A, KC_R, KC_S, KC_T, KC_G, KC_M, LT(LAYER_NAVI, KC_N), KC_E, KC_I, KC_O, KC_ENT,
-        KC_LSPO, KC_X, KC_C, KC_D, KC_V, KC_Z, KC_K, KC_H, KC_COMM, KC_DOT, KC_RSPC, TT(LAYER_SYMB),
+        KC_ESC,  KC_Q, KC_W, KC_F, KC_P, KC_G, KC_J, LT(LAYER_LEDS, KC_L), KC_U, KC_Y, LT(LAYER_SHF_MODS, KC_SCLN), _______, KC_BSPC,
+        KC_TAB,  KC_A, KC_R, KC_S, KC_T, KC_D, KC_H, LT(LAYER_NAVI, KC_N), KC_E, KC_I, KC_O, KC_ENT,
+        KC_LSPO, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_K, KC_M, KC_COMM, KC_DOT, KC_RSPC, TT(LAYER_SYMB),
         KC_LCTL, KC_LALT, KC_LGUI, KC_SPACE, KC_SPACE, TT(LAYER_EXTRA), _______, _______, TO(LAYER_BASE)
     ),
 
@@ -98,11 +98,11 @@ const rgblight_segment_t PROGMEM rgb_setting_layer_led_ctrl[]   = RGBLIGHT_LAYER
 // Layer list
 const rgblight_segment_t* const PROGMEM rgb_layers[] = RGBLIGHT_LAYERS_LIST(rgb_setting_layer_capslock,    // Caps
                                                                             rgb_setting_layer_base,        // Base
+                                                                            rgb_setting_layer_colemak,     // Alternate layout
                                                                             rgb_setting_layer_numbers,     // Layer 1
                                                                             rgb_setting_layer_navigation,  // Layer 2
                                                                             rgb_setting_layer_extras,      // Layer 3
                                                                             rgb_setting_layer_led_ctrl,    // Layer 4
-                                                                            rgb_setting_layer_colemak,     // Alternate layout
                                                                             rgb_setting_clear_left_side    // Clear
 );
 
@@ -115,11 +115,11 @@ bool led_update_user(led_t led_state) {
 layer_state_t layer_state_set_user(layer_state_t state) {
     // Handles updating the LEDs based on layer
     rgblight_set_layer_state(1, layer_state_cmp(state, LAYER_BASE));
-    rgblight_set_layer_state(2, layer_state_cmp(state, LAYER_SYMB));
-    rgblight_set_layer_state(3, layer_state_cmp(state, LAYER_NAVI));
-    rgblight_set_layer_state(4, layer_state_cmp(state, LAYER_EXTRA));
-    rgblight_set_layer_state(5, layer_state_cmp(state, LAYER_LEDS));
-    rgblight_set_layer_state(6, layer_state_cmp(state, LAYER_COLEMAK));
+    rgblight_set_layer_state(2, layer_state_cmp(state, LAYER_COLEMAK));
+    rgblight_set_layer_state(3, layer_state_cmp(state, LAYER_SYMB));
+    rgblight_set_layer_state(4, layer_state_cmp(state, LAYER_NAVI));
+    rgblight_set_layer_state(5, layer_state_cmp(state, LAYER_EXTRA));
+    rgblight_set_layer_state(6, layer_state_cmp(state, LAYER_LEDS));
     return state;
 }
 
