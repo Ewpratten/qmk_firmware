@@ -15,7 +15,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // Base Layer
     [LAYER_BASE] = LAYOUT(
-        KC_ESC,  KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, LT(LAYER_SHF_MODS, KC_P), KC_DEL, KC_BSPC,
+        KC_ESC,  KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O,  KC_P, KC_DEL, KC_BSPC,
         KC_TAB,  KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, LT(LAYER_LEDS, KC_L), KC_SCLN, KC_ENT,
         KC_LSPO, KC_Z, KC_X, KC_C, KC_V, KC_B, LT(LAYER_NAVI, KC_N), KC_M, KC_COMM, KC_DOT, KC_RSPC, TT(LAYER_SYMB),
         KC_LCTL, KC_LALT, KC_LGUI, KC_SPACE, KC_SPACE, TT(LAYER_EXTRA), _______, _______, TO(LAYER_COLEMAK)
@@ -23,7 +23,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // QWERTY layer
     [LAYER_COLEMAK] = LAYOUT(
-        KC_ESC,  KC_Q, KC_W, KC_F, KC_P, KC_G, KC_J, LT(LAYER_LEDS, KC_L), KC_U, KC_Y, LT(LAYER_SHF_MODS, KC_SCLN), _______, KC_BSPC,
+        KC_ESC,  KC_Q, KC_W, KC_F, KC_P, KC_G, KC_J, LT(LAYER_LEDS, KC_L), KC_U, KC_Y,  KC_SCLN, _______, KC_BSPC,
         KC_TAB,  KC_A, KC_R, KC_S, KC_T, KC_D, KC_H, LT(LAYER_NAVI, KC_N), KC_E, KC_I, KC_O, KC_ENT,
         KC_LSPO, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_K, KC_M, KC_COMM, KC_DOT, KC_RSPC, TT(LAYER_SYMB),
         KC_LCTL, KC_LALT, KC_LGUI, KC_SPACE, KC_SPACE, TT(LAYER_EXTRA), _______, _______, TO(LAYER_BASE)
@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * This layer is used for controlling both the mouse and arrow keys.
     */
     [LAYER_NAVI] = LAYOUT(
-        TO(LAYER_BASE), KC_WH_D, KC_MS_U, KC_WH_U, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        TO(LAYER_BASE), KC_WH_D, KC_MS_U, KC_WH_U, _______, _______, _______, _______, _______, _______, TO(LAYER_SHF_MODS), _______, _______,
         KC_ACL0, KC_MS_L, KC_MS_D, KC_MS_R, _______, _______, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_INS, _______,
         KC_ACL1, _______, _______, _______, _______, KC_BTN3, _______, _______, _______, _______, _______, _______,
         _______, _______, _______, KC_BTN1, KC_BTN2, _______, _______, _______, _______
@@ -74,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // Shift modifiers
     [LAYER_SHF_MODS] = LAYOUT(
-        DYN_REC_STOP , DM_REC1, DM_REC2, _______, _______, _______, _______, _______, _______,   _______, _______, _______, KC_DEL,
+        DYN_REC_STOP , DM_REC1, DM_REC2, _______, _______, _______, _______, _______, _______,   _______, _______, _______, _______,
         _______, DM_PLY1, DM_PLY2, _______,    _______,    _______, _______, _______, _______, _______,_______,  _______,
         _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______
