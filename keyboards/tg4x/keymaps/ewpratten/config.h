@@ -40,3 +40,7 @@
 // To be tweaked based on typing speed
 #define TAPPING_TERM 300
 #define TAPPING_TERM_PER_KEY
+
+// Chording
+#define COMBO_COUNT 3
+#define COMBO_TERM 20
