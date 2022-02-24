@@ -24,10 +24,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_NSYM] = LAYOUT(
-    KC_1, KC_2, KC_3, KC_EQL,  KC_NO,     KC_GESC,  KC_NO,   KC_NO,   KC_NO,    KC_BSPC,
-    KC_4, KC_5, KC_6, KC_0,    KC_NO,     KC_LEFT,  KC_DOWN, KC_UP,   KC_RIGHT, KC_NO,
-    KC_7, KC_8, KC_9, KC_MINS, KC_NO,     KC_QUOTE, KC_SLSH, KC_LBRC, KC_RBRC,  KC_BSLS,
-                    CC_LSTO, KC_LCTL,     TO(_NAVIGATION),  KC_LGUI
+    KC_1, KC_2, KC_3, KC_EQL,  KC_NO,            KC_GESC,  KC_NO,   KC_NO,   KC_NO,    KC_BSPC,
+    KC_4, KC_5, KC_6, KC_0,    KC_NO,            KC_LEFT,  KC_DOWN, KC_UP,   KC_RIGHT, KC_NO,
+    KC_7, KC_8, KC_9, KC_MINS, TO(_COLEMAK),     KC_QUOTE, KC_SLSH, KC_LBRC, KC_RBRC,  KC_BSLS,
+                     KC_LSFT, KC_LCTL,            TO(_NAVIGATION),  KC_LGUI
   ),
 
   // [_NSYM] = LAYOUT(
@@ -40,8 +40,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_NAVIGATION] = LAYOUT(
     KC_GESC, KC__VOLDOWN, KC__VOLUP, CC_PSCR, KC_NO,       KC_NO,   KC_PGDN, KC_PGUP, KC_NO,    KC_NO,
     KC_MPRV, KC_MPLY,     KC_MNXT,   KC_NO,   KC_NO,       KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT, KC_NO,
-    KC_NO,   KC_NO,       KC_NO,     KC_NO,   KC_NO,       KC_HOME, KC_END,  KC_NO,   KC_NO,    KC_NO,
-                          CC_LSTO,   KC_LCTL,              KC_NO,   KC_NO
+    KC_NO,   KC_NO,       KC_NO,     KC_NO,   TO(_COLEMAK),       KC_HOME, KC_END,  KC_NO,   KC_NO,    KC_NO,
+                          KC_LSFT, KC_LCTL,              KC_NO,   KC_NO
   )
 };
 // clang-format on
