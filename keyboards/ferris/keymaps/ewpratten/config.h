@@ -40,3 +40,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Space cadet on control key
 #define LCPO_KEYS KC_LCTL, KC_LSFT, KC_0
+
+// Force constant-speed controls for mouse movement
+#define MK_3_SPEED
+#define MK_MOMENTARY_ACCEL
+
+// Override the mode-2 speed
+#define MK_C_OFFSET_1 4 // Defaut: 4
