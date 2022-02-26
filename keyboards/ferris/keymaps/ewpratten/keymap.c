@@ -2,8 +2,8 @@
 
 // Layer definitions
 enum ferris_layers {
-    _QWERTY, // QWERTY Layer
     _COLEMAK,  // COLEMAK Layer
+    _QWERTY, // QWERTY Layer
     _NSYM,     // Numbers and Symbols
     _NAVIGATION,  // Navigation layer
     _SHORTCUT, // Shortcut Layer
@@ -18,17 +18,17 @@ enum ferris_layers {
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_QWERTY] = LAYOUT(
-    KC_Q, KC_W,    KC_E,    KC_R,    KC_T,            KC_Y,      KC_U,  KC_I,    KC_O,   KC_P,
-    KC_A, KC_S,    KC_D,    KC_F,    KC_G,            KC_H,      KC_J,  KC_K,    KC_L,   KC_ENT,
-    KC_Z, KC_X,    KC_C,    KC_V,    KC_B,            KC_N,      KC_M,  KC_COMM, KC_DOT, KC_BSPC,
-                            KC_LSPO, KC_LCPO,         MO(_NSYM), KC_SPACE
-  ),
-
   [_COLEMAK] = LAYOUT(
     KC_Q, KC_W,    KC_F,    KC_P,    KC_G,            KC_J,      KC_L,  KC_U,    KC_Y,    KC_BSPC,
     KC_A, KC_R,    KC_S,    KC_T,    KC_D,            KC_H,      KC_N,  KC_E,    KC_I,    KC_O,
     KC_Z, KC_X,    KC_C,    KC_V,    KC_B,            KC_K,      KC_M,  KC_COMM, KC_DOT, KC_ENT,
+                            KC_LSPO, KC_LCPO,         MO(_NSYM), KC_SPACE
+  ),
+
+  [_QWERTY] = LAYOUT(
+    KC_Q, KC_W,    KC_E,    KC_R,    KC_T,            KC_Y,      KC_U,  KC_I,    KC_O,   KC_P,
+    KC_A, KC_S,    KC_D,    KC_F,    KC_G,            KC_H,      KC_J,  KC_K,    KC_L,   KC_ENT,
+    KC_Z, KC_X,    KC_C,    KC_V,    KC_B,            KC_N,      KC_M,  KC_COMM, KC_DOT, KC_BSPC,
                             KC_LSPO, KC_LCPO,         MO(_NSYM), KC_SPACE
   ),
 
