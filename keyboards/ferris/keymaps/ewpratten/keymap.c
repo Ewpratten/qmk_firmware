@@ -2,7 +2,7 @@
 
 // Layer definitions
 enum ferris_layers {
-    _QWERTY, // Base Layer
+    _QWERTY, // QWERTY Layer
     _COLEMAK,  // COLEMAK Layer
     _NSYM,     // Numbers and Symbols
     _NAVIGATION,  // Navigation layer
@@ -10,7 +10,7 @@ enum ferris_layers {
 };
 
 // Shorthands
-#define GO_HOME TO(_QWERTY)
+#define GO_HOME TO(_COLEMAK)
 #define GO_NAV TO(_NAVIGATION)
 #define GO_SHRT OSL(_SHORTCUT)
 #define LD_TERM LGUI(KC_ENT)
