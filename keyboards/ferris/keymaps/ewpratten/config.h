@@ -18,7 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 
 // Tapdance settings
-#define TAPPING_TERM 200
+#define TAPPING_TERM 100
 
 // Space cadet on control key
 #define LCPO_KEYS KC_LCTL, KC_LSFT, KC_0
@@ -36,3 +36,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define BOOTMAGIC_LITE_ROW_RIGHT 5
 #define BOOTMAGIC_LITE_COLUMN_RIGHT 0
+
+// Chording config
+#define FORCE_NKRO
+#define COMBO_COUNT 20
+
+
+// Settings for enabling experiments
+#define ENABLE_ASETNIOP
