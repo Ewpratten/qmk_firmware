@@ -18,7 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 
 // Tapdance settings
-#define TAPPING_TERM 100
+#define TAPPING_TERM 50
 
 // Space cadet on control key
 #define LCPO_KEYS KC_LCTL, KC_LSFT, KC_0
