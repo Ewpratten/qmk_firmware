@@ -67,6 +67,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 */
 
+// Overrides for the tapping terms.
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t* record) {
+    switch (keycode) {
+        // Space cadet needs to be much slower than my default
+        case KC_LSPO:
+        case KC_LCPO:
+            return 200;
+        default:
+            return TAPPING_TERM;
+    }
+}
+
 /* Chording */
 enum combos {
 #ifdef ENABLE_ASETNIOP
