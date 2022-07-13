@@ -45,4 +45,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 // Settings for enabling experiments
-// #define ENABLE_ASETNIOP
+#define ENABLE_ASETNIOP
