@@ -41,7 +41,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Chording config
 #define FORCE_NKRO
-#define COMBO_COUNT 20
+#define COMBO_COUNT 2
 
 
 // Settings for enabling experiments
