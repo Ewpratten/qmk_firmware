@@ -6,7 +6,8 @@ enum combos {
     // Combo that uses both pinky fingers to produce an <enter> keypress
     COMBO_PINKY_ENTER,
     // Combo that uses both ring fingers to produce a <backspace> keypress
-    COMBO_RING_BACKSPC,
+    // COMBO_RING_BACKSPC,
+    COMBO_RING_SCLN,
 
     // // ASETNIOP
     // ASETNIOP_AE_Q,
@@ -31,7 +32,8 @@ enum combos {
 
 // Define all the input combinations needed for the combos
 MAKE_COMBO_INPUTS(COMBO_PINKY_ENTER, KC_A, KC_O)
-MAKE_COMBO_INPUTS(COMBO_RING_BACKSPC, KC_R, KC_I)
+MAKE_COMBO_INPUTS(COMBO_RING_SCLN, KC_R, KC_I)
+// MAKE_COMBO_INPUTS(COMBO_RING_BACKSPC, KC_R, KC_I)
 // MAKE_COMBO_INPUTS(ASETNIOP_AE_Q, KC_A, KC_E)
 // MAKE_COMBO_INPUTS(ASETNIOP_RA_W, KC_R, KC_A)
 // MAKE_COMBO_INPUTS(ASETNIOP_RE_Z, KC_R, KC_E)
@@ -54,7 +56,8 @@ MAKE_COMBO_INPUTS(COMBO_RING_BACKSPC, KC_R, KC_I)
 // Map everything together
 combo_t key_combos[COMBO_COUNT] = {
     [COMBO_PINKY_ENTER] = COMBO(combo_inputs_COMBO_PINKY_ENTER, KC_ENT),
-    [COMBO_RING_BACKSPC] = COMBO(combo_inputs_COMBO_RING_BACKSPC, KC_BSPC),
+    [COMBO_RING_SCLN] = COMBO(combo_inputs_COMBO_RING_SCLN, KC_SCLN),
+    // [COMBO_RING_BACKSPC] = COMBO(combo_inputs_COMBO_RING_BACKSPC, KC_BSPC),
     // [ASETNIOP_AE_Q] = COMBO(combo_inputs_ASETNIOP_AE_Q, KC_Q),
     // [ASETNIOP_RA_W] = COMBO(combo_inputs_ASETNIOP_RA_W, KC_W),
     // [ASETNIOP_RE_Z] = COMBO(combo_inputs_ASETNIOP_RE_Z, KC_Z),

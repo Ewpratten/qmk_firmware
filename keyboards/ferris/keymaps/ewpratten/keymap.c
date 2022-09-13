@@ -23,6 +23,7 @@ enum ferris_layers {
 #define LD_TERM LGUI(KC_ENT)
 #define CC_QUIT LGUI(LSFT(KC_Q))
 #define CC_COMM LCTL(KC_SLSH)
+#define CC_FMT LCTL(LSFT(KC_I))
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -58,14 +59,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_NUMERIC] = LAYOUT(
     KC_F1,    KC_F2,  KC_F3,  KC_F4,  KC_F5,   /**/    KC_F6,    KC_F7,  KC_F8,  KC_F9,  KC_F10,
     KC_1,     KC_2,   KC_3,   KC_4,   KC_5,    /**/    KC_6,     KC_7,   KC_8,   KC_9,   KC_0,
-    KC_LALT,  KC_NO,  KC_NO,  KC_NO,  KC_NO,   /**/    KC_LGUI,  KC_EQL,  KC_MINS,  KC_F11, KC_F12,
+    KC_LALT,  KC_NO,  KC_NO,  KC_NO,  TO(_MODMAK),   /**/    KC_LGUI,  KC_EQL,  KC_MINS,  KC_F11, KC_F12,
                          KC_LSFT,   KC_LCTL,   /**/    KC_NO,    KC_NO
   ),
 
   [_UTILITY] = LAYOUT(
-    KC_ESC, CC_QUIT, KC_NO, KC_NO, KC_PSCR,    /**/    LD_TERM,  KC_HOME,   KC_PGUP,  KC_PGDN,  KC_SCLN,
-    KC_NO, KC_NO, KC_NO, KC_NO, KC_TAB,     /**/    KC_LEFT,  KC_DOWN,  KC_UP,    KC_RIGHT, KC_END,
-    KC_NO, KC_NO, KC_NO, KC_NO, CC_COMM,      /**/    KC_QUOTE, KC_SLSH, KC_LBRC, KC_RBRC,  KC_BSLS,
+    KC_ESC, CC_QUIT, KC_NO, KC_NO, KC_PSCR,    /**/    LD_TERM,  KC_HOME,   KC_PGUP,  KC_PGDN,  KC_DEL,
+    KC_MPRV, KC_MPLY, KC_MNXT, KC_NO, KC_TAB,     /**/    KC_LEFT,  KC_DOWN,  KC_UP,    KC_RIGHT, KC_END,
+    KC_NO, KC_NO, KC_NO, CC_FMT, CC_COMM,      /**/    KC_QUOTE, KC_SLSH, KC_LBRC, KC_RBRC,  KC_BSLS,
                     KC_LSFT,   KC_LCTL,     /**/    KC_NO, KC_LGUI
   )
 
