@@ -16,31 +16,6 @@
 
 #pragma once
 
-// place overrides here
-
-// Force constant-speed controls for mouse movement
-#define MK_3_SPEED
-#define MK_MOMENTARY_ACCEL
-
-// Override the mode-2 speed
-#define MK_C_OFFSET_1 4 // Defaut: 4
-
-// Double tap to toggle layer
-#define TAPPING_TOGGLE 2
-
-// Backlight defaults
-#define RGBLIGHT_DEFAULT_HUE 0
-#define RGBLIGHT_DEFAULT_SAT 0
-#define RGBLIGHT_DEFAULT_VAL 0
-
-// Layer-based lighting
-#define RGBLIGHT_LAYERS
-// NOTE: May need to increase the max light layer count in the future
-
 // To be tweaked based on typing speed
 #define TAPPING_TERM 300
 #define TAPPING_TERM_PER_KEY
-
-// Chording
-#define COMBO_COUNT 3
-#define COMBO_TERM 20

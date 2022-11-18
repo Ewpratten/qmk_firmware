@@ -9,6 +9,13 @@
         "**/*.bin": true
     },
     "files.associations": {
+        "*.json.liquid": "json",
+        "*.yaml.liquid": "yaml",
+        "*.md.liquid": "markdown",
+        "*.js.liquid": "liquid-javascript",
+        "*.css.liquid": "liquid-css",
+        "*.scss.liquid": "liquid-scss",
+        "AS398057": "plaintext",
         "*.h": "c",
         "*.c": "c",
         "*.inc": "c",
@@ -19,7 +26,8 @@
         "utility": "c",
         "ranges": "c",
         "typeindex": "c",
-        "typeinfo": "c"
+        "typeinfo": "c",
+        "compare": "c"
     },
     "[markdown]": {
         "editor.trimAutoWhitespace": false,
