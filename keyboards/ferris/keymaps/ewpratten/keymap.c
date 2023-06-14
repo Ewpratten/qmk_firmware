@@ -64,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_UTILITY] = LAYOUT(
-    KC_ESC, CC_QUIT, KC_NO, KC_NO, KC_PSCR,    /**/    LD_TERM,  KC_HOME,   KC_PGUP,  KC_PGDN,  KC_DEL,
+    KC_Q, KC_VOLD, KC_VOLU, KC_NO, KC_PSCR,    /**/    LD_TERM,  KC_HOME,   KC_PGUP,  KC_PGDN,  KC_DEL,
     KC_MPRV, KC_MPLY, KC_MNXT, KC_NO, KC_TAB,     /**/    KC_LEFT,  KC_DOWN,  KC_UP,    KC_RIGHT, KC_END,
     KC_NO, KC_NO, KC_NO, CC_FMT, CC_COMM,      /**/    KC_QUOTE, KC_SLSH, KC_LBRC, KC_RBRC,  KC_BSLS,
                     KC_LSFT,   KC_LCTL,     /**/    KC_NO, KC_LGUI
