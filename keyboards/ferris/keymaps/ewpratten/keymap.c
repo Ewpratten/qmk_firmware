@@ -10,7 +10,9 @@ enum ferris_layers {
     // _QWERTY,
     _MODMAK,
     _NUMERIC,
-    _UTILITY
+    _UTILITY,
+    _MACROS,
+    _RAINBOW
     // _NSYM,     // Numbers and Symbols
     // _NAVIGATION,  // Navigation layer
     // _SHORTCUT, // Shortcut Layer
@@ -46,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q, KC_W,    KC_F,    KC_P,    KC_G,            KC_J,      KC_L,  KC_U,    KC_Y,   KC_BSPC,
     KC_A, KC_R,    KC_S,    KC_T,    KC_D,            KC_H,      KC_N,  KC_E,    KC_I,   KC_O,
     KC_LCTL, KC_Z, KC_X,    KC_C,    KC_V,                KC_B,      KC_M,  KC_K, KC_COMM, KC_DOT,
-                            KC_LSFT, KC_NO,         LT(_UTILITY, KC_SPACE), LT(_NUMERIC, KC_SPACE)
+                            KC_LSFT, MO(_MACROS),         LT(_UTILITY, KC_SPACE), LT(_NUMERIC, KC_SPACE)
   ),
 
 //   [_QWERTY] = LAYOUT(
@@ -68,6 +70,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_MPRV, KC_MPLY, KC_MNXT, KC_NO, KC_TAB,     /**/    KC_LEFT,  KC_DOWN,  KC_UP,    KC_RIGHT, KC_END,
     KC_NO, KC_NO, KC_NO, CC_FMT, CC_COMM,      /**/    KC_QUOTE, KC_SLSH, KC_LBRC, KC_RBRC,  KC_BSLS,
                     KC_LSFT,   KC_LCTL,     /**/    KC_NO, KC_LGUI
+  ),
+
+  [_MACROS] = LAYOUT(
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,        KC_NO, KC_NO, KC_NO, KC_NO, TO(_RAINBOW),
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+                         KC_NO, KC_NO,        KC_NO, KC_NO
+  ),
+
+  [_RAINBOW] = LAYOUT(
+    KC_ESC, KC_Q, KC_W, KC_E, KC_5,        TO(_MODMAK), KC_NO, KC_NO, KC_NO, KC_NO,
+    KC_LSFT, KC_A, KC_S, KC_D, KC_G,       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+    KC_LCTL, KC_Z, KC_X, KC_C, KC_V,       KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+                     KC_SPACE, KC_X,       KC_NO, KC_NO
   )
 
 
