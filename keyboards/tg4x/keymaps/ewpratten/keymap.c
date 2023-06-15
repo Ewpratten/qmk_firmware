@@ -1,7 +1,7 @@
 #include QMK_KEYBOARD_H
 
 /* Layer Definitions */
-enum tg4x_layers { LAY_QWERTY, LAY_COLEMAK, LAY_NUM, LAY_UTIL };
+enum tg4x_layers { LAY_QWERTY, LAY_COLEMAK, LAY_NUM, LAY_UTIL, LAY_QUIRKY };
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -21,14 +21,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11, KC_F12,
         KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,
        KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_QUOTE, KC_SLSH, KC_LBRC, KC_RBRC, KC_BSLS, KC_F11, KC_NO,
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_SPACE, KC_SPACE, KC_NO, KC_NO, KC_NO, KC_NO
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_SPACE, KC_SPACE, MO(LAY_QUIRKY), KC_NO, KC_NO, KC_NO
     ),
 
     // Extras layer
     [LAY_UTIL] = LAYOUT(
-        KC_NO, KC__VOLDOWN, KC__VOLUP, KC__MUTE, RESET, KC_NO, KC_NO, KC_PGUP, KC_NO,   KC_PGDN, KC_PSCR, KC_SLCK, KC_PAUS,
+        KC_NO, KC__VOLDOWN, KC__VOLUP, KC__MUTE, RESET, KC_NO, KC_NO, KC_PGUP, KC_NO,  KC_PGDN, KC_PSCR, KC_SLCK, KC_PAUS,
         KC_CAPS, KC_MPRV, KC_MPLY, KC_MNXT, KC_NO, KC_NO, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,KC_INS,  KC_NO,
         KC_TRNS, RGB_TOG, KC_NO, KC_NO, KC_NO, KC_HOME, KC_END,  TO(LAY_COLEMAK), KC_NO, KC_NO, KC_TRNS, KC_NO,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_SPACE, KC_SPACE, KC_NO, KC_NO, KC_NO, KC_NO
+    ),
+
+    // "Quirky" extra things
+    [LAY_UTIL] = LAYOUT(
+        KC_NO, KC_F13, KC_F14, KC_F15, KC_F16, KC_F17, KC_F18, KC_F19, KC_F20, KC_F21, KC_F22, KC_F23, KC_F24,
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,KC_NO,  KC_NO,
+        KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,  KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO,
         KC_TRNS, KC_TRNS, KC_TRNS, KC_SPACE, KC_SPACE, KC_NO, KC_NO, KC_NO, KC_NO
     ),
 };
