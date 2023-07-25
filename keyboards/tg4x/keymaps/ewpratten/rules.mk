@@ -4,3 +4,6 @@ BOOTLOADER = qmk-dfu
 
 # Enable bootloader keys
 BOOTMAGIC_ENABLE = lite
+
+# Enable mousekeys
+MOUSEKEY_ENABLE = yes

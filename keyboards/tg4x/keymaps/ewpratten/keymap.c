@@ -1,7 +1,7 @@
 #include QMK_KEYBOARD_H
 
 /* Layer Definitions */
-enum tg4x_layers { LAY_QWERTY, LAY_COLEMAK, LAY_NUM, LAY_UTIL };
+enum tg4x_layers { LAY_QWERTY, LAY_COLEMAK, LAY_NUM, LAY_UTIL, MOUSEKEY };
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -9,7 +9,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC,  KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O,  KC_P, KC_DEL, KC_BSPC,
         KC_TAB,  KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K,  KC_L, KC_SCLN, KC_ENT,
         KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_RSFT, MO(LAY_NUM),
-        KC_LCTL, KC_LALT, KC_LGUI, KC_SPACE, KC_SPACE, MO(LAY_UTIL), KC_NO, KC_NO, KC_NO
+        KC_LCTL, KC_LALT, KC_LGUI, KC_SPACE, KC_SPACE, MO(LAY_UTIL), KC_NO, MO(MOUSEKEY), KC_NO
     ),
     [LAY_COLEMAK] = LAYOUT(
         KC_ESC,  KC_Q, KC_W, KC_F, KC_P, KC_G, KC_J, KC_L, KC_U, KC_Y,  KC_SCLN, KC_DEL, KC_BSPC,
@@ -30,6 +30,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_CAPS, KC_MPRV, KC_MPLY, KC_MNXT, KC_NO, KC_NO, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,KC_INS,  KC_NO,
         KC_TRNS, RGB_TOG, KC_NO, KC_NO, KC_NO, KC_HOME, KC_END,  TO(LAY_COLEMAK), KC_NO, KC_NO, KC_TRNS, KC_NO,
         KC_TRNS, KC_TRNS, KC_TRNS, KC_SPACE, KC_SPACE, KC_NO, KC_NO, KC_NO, KC_NO
+    ),
+
+    // Mouse Layer
+    [MOUSEKEY] = LAYOUT(
+        TO(LAY_QWERTY), KC_NO, KC_WH_U, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_NO, KC_NO, KC_WH_D, KC_NO, KC_NO, KC_NO, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,KC_NO,  KC_NO,
+        KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_BTN3, KC_NO,  KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_BTN1, KC_BTN2, KC_NO, KC_NO, KC_NO, KC_NO
     ),
 
     // "Quirky" extra things
