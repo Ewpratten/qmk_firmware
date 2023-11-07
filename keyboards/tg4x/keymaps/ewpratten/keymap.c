@@ -1,7 +1,7 @@
 #include QMK_KEYBOARD_H
 
 /* Layer Definitions */
-enum tg4x_layers { LAY_QWERTY, LAY_COLEMAK, LAY_NUM, LAY_UTIL, MOUSEKEY };
+enum tg4x_layers { LAY_QWERTY, LAY_COLEMAK, LAY_NUM, LAY_UTIL, MOUSEKEY, UNICODE, UNICODE_UPPER };
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -9,7 +9,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC,  KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O,  KC_P, KC_DEL, KC_BSPC,
         KC_TAB,  KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K,  KC_L, KC_SCLN, KC_ENT,
         KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_RSFT, MO(LAY_NUM),
-        KC_LCTL, KC_LALT, KC_LGUI, KC_SPACE, KC_SPACE, MO(LAY_UTIL), KC_NO, MO(MOUSEKEY), KC_NO
+        KC_LCTL, KC_LALT, KC_LGUI, KC_SPACE, KC_SPACE, MO(LAY_UTIL), MO(UNICODE), MO(MOUSEKEY), KC_NO
     ),
     [LAY_COLEMAK] = LAYOUT(
         KC_ESC,  KC_Q, KC_W, KC_F, KC_P, KC_G, KC_J, KC_L, KC_U, KC_Y,  KC_SCLN, KC_DEL, KC_BSPC,
@@ -40,6 +40,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS, KC_TRNS, KC_TRNS, KC_BTN1, KC_BTN2, KC_NO, KC_NO, KC_NO, KC_NO
     ),
 
+    // Unicode Layer
+    [UNICODE] = LAYOUT(
+        KC_NO, KC_NO, KC_NO, UC(0x03B5), KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, UC(0x03A9), UC(0x03C0), KC_NO, KC_NO,
+        KC_NO, KC_NO, KC_NO, UC(0x0394), KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, UC(0x03BB), KC_NO,  KC_NO,
+        KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, UC(0x03B2), KC_NO, UC(0x00B5), KC_NO, KC_NO, KC_TRNS, KC_NO,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
+    ),
+
+
     // "Quirky" extra things
     // [LAY_UTIL] = LAYOUT(
     //     KC_NO, KC_F13, KC_F14, KC_F15, KC_F16, KC_F17, KC_F18, KC_F19, KC_F20, KC_F21, KC_F22, KC_F23, KC_F24,
@@ -50,12 +59,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 // clang-format on
 
-
-
 void matrix_scan_user() {}
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) { return true; }
-
 
 // Overrides for the tapping terms.
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t* record) {

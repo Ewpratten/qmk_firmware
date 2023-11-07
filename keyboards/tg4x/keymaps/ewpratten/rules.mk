@@ -7,3 +7,6 @@ BOOTMAGIC_ENABLE = lite
 
 # Enable mousekeys
 MOUSEKEY_ENABLE = yes
+
+# Enable Unicode
+UNICODE_ENABLE = yes
